@@ -39,10 +39,10 @@ Each laboratory is organized in a separate folder (Lab 1 to Lab 14), including:
 - [Lab 9 Folder](lab9/)
 
 ## 📁 LAB 10 – INVERTER schematic
-- [Lab 10 Folder](lab10/)
+- [Lab 10 Folder](INVERTER/)
 
 ## 📁 LAB 11 – INVERTER LAYOUT
-- [Lab 11 Folder](lab11/)
+- [Lab 11 Folder](INVERTER/)
 
 ## 📁 LAB 12 – NAND GATE
 - [Lab 12 Folder](lab12/)
