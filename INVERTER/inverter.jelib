@@ -1,0 +1,79 @@
+# header information:
+Hinverter|9.07
+
+# Views:
+Vlayout|lay
+Vschematic|sch
+
+# Technologies:
+Tbicmos|ScaleFORbicmos()D175.0
+Tmocmos|ScaleFORmocmos()D175.0|mocmosNumberOfMetalLayers()I3
+Ttft|ScaleFORtft()D175.0
+
+# Cell inverter;1{lay}
+Cinverter;1{lay}||mocmos|1765889727178|1765896604590||DRC_last_good_drc_area_date()G1765896626306|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1765896626306
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NMetal-1-P-Active-Con|contact@0||-26|13||5||
+NMetal-1-P-Active-Con|contact@1||-16|13||5||
+NMetal-1-N-Active-Con|contact@2||-26|-7||||
+NMetal-1-N-Active-Con|contact@3||-16|-7||||
+NMetal-1-Polysilicon-1-Con|contact@4||-14|3||||
+NN-Transistor|nmos@0||-21|-7|2||R||SIM_spice_model(D5G1;)SNMOS
+NMetal-1-Pin|pin@0||-16|24.5||||
+NMetal-1-Pin|pin@1||-16|-16||||
+NPolysilicon-1-Pin|pin@2||-21|3||||
+NMetal-1-Pin|pin@3||-26|3||||
+NMetal-1-Pin|pin@4||-35|3||||
+Ngeneric:Invisible-Pin|pin@5||-62|-1|||||SIM_spice_card(D5G1;)S[.include tsmc350.txt,.PARAM SUPPLY=3.3V,VDD VDD 0 DC 'SUPPLY',VIN VIN 0 PULSE 0 'SUPPLY' 100PS 10PS 10PS 200PS 500PS,.TRAN 10PS 600PS,.meas tran tphl TRIG v(Vin) VAL=1.65 FALL=1 TARG v(Vout) VAL=1.65 RISE=1,.meas tran tplh TRIG v(Vin) VAL=1.65 RISE=1 TARG v(Vout) VAL=1.65 FALL=1,.meas tran tp_avg PARAM = (abs(tphl)+abs(tplh))/2]
+NP-Transistor|pmos@0||-21|13|7||R||SIM_spice_model(D5G1;)SPMOS
+NMetal-1-P-Well-Con|substr@0||-21|-16|15|||
+NMetal-1-N-Well-Con|well@0||-21|24.5|15|||
+AP-Active|net@0||7|S0|pmos@0|diff-top|-24.75|13|contact@0||-26|13
+AP-Active|net@1||7|S0|contact@1||-16|13|pmos@0|diff-bottom|-17.25|13
+AMetal-1|net@2||1|S2700|contact@1||-16|13|pin@0||-16|24.5
+AMetal-1|net@3||1|S1800|well@0||-21|24.5|pin@0||-16|24.5
+AN-Active|net@4||2|S1800|contact@2||-26|-7|nmos@0|diff-top|-24.75|-7
+AN-Active|net@5||2|S0|contact@3||-16|-7|nmos@0|diff-bottom|-17.25|-7
+AMetal-1|net@6||1|S900|contact@3||-16|-7|pin@1||-16|-16
+AMetal-1|net@7||1|S1800|substr@0||-21|-16|pin@1||-16|-16
+APolysilicon-1|net@9|||S900|pmos@0|poly-left|-21|6|pin@2||-21|3
+APolysilicon-1|net@10|||S900|pin@2||-21|3|nmos@0|poly-right|-21|-2.5
+APolysilicon-1|net@11|||S0|contact@4||-14|3|pin@2||-21|3
+AMetal-1|net@13||1|S900|contact@0||-26|13|pin@3||-26|3
+AMetal-1|net@14||1|S900|pin@3||-26|3|contact@2||-26|-7
+AMetal-1|net@15||1|S0|pin@3||-26|3|pin@4||-35|3
+EGND||D5G2;|substr@0||G
+EVDD||D5G2;|well@0||P
+EVIN||D5G2;|contact@4||I
+EVOUT||D5G2;|pin@4||O
+X
+
+# Cell inverter;1{sch}
+Cinverter;1{sch}||schematic|1765714352042|1765890002883|
+NTransistor|NMOS|D5G1;Y-10;|0|-10.005|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-11;)S5|SIM_spice_model(D5G1;Y-20;)SNMOS
+NTransistor|PMOS|D5G1;Y-10;|0|0|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-11;)S10|SIM_spice_model(D5G1;Y-20;)SPMOS
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-10|0||||
+NOff-Page|conn@1||10|0||||
+NGround|gnd@0||0|-20||||
+NWire_Pin|pin@0||0|2||||
+NWire_Pin|pin@1||2|-18||||
+NWire_Pin|pin@2||-1|0||||
+NWire_Pin|pin@3||2|0||||
+Ngeneric:Invisible-Pin|pin@4||-20|-10|||||SIM_spice_card(D5G1;)S[.include tsmc350.txt,.PARAM SUPPLY=3.3V,VDD VDD 0 DC 'SUPPLY',VIN VIN 0 PULSE 0 'SUPPLY' 100PS 10PS 10PS 200PS 500PS,.TRAN 10PS 600PS,.meas tran tphl TRIG v(Vin) VAL=1.65 FALL=1 TARG v(Vout) VAL=1.65 RISE=1,.meas tran tplh TRIG v(Vin) VAL=1.65 RISE=1 TARG v(Vout) VAL=1.65 FALL=1,.meas tran tp_avg PARAM = (abs(tphl)+abs(tplh))/2]
+NPower|pwr@0||0|20||||
+Awire|net@0|||900|pwr@0||0|20|pin@0||0|2
+Awire|net@1|||0|PMOS|d|2|2|pin@0||0|2
+Awire|net@3|||900|NMOS|s|2|-12.005|pin@1||2|-18
+Awire|net@4|||1800|gnd@0||0|-18|pin@1||2|-18
+Awire|net@6|||2700|NMOS|g|-1|-10.005|pin@2||-1|0
+Awire|net@7|||2700|pin@2||-1|0|PMOS|g|-1|0
+Awire|net@8|||1800|conn@0|y|-8|0|pin@2||-1|0
+Awire|net@9|||2700|PMOS|s|2|-2|pin@3||2|0
+Awire|net@10|||900|pin@3||2|0|NMOS|d|2|-8.005
+Awire|net@11|||0|conn@1|a|8|0|pin@3||2|0
+EGND||D5G2;|gnd@0||G
+EVDD||D5G2;|pwr@0||P
+EVIN||D5G2;|conn@0|a|I
+EVOUT||D5G2;|conn@1|y|O
+X
